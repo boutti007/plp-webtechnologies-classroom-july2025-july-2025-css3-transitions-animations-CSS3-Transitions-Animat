@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+    color: #222;
+    padding: 2rem;
+}
+
+/* --- Part 1: CSS3 Transitions and Animations --- */
+
+/* Button hover effect */
+.animated-btn {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 1em 2em;
+    font-size: 1.1em;
+    border-radius: 8px;
+    transition: background 0.4s, transform 0.3s;
+    cursor: pointer;
+}
+.animated-btn:hover {
+    background: #2ecc71;
+    transform: scale(1.1) rotate(-2deg);
+}
+
+/* Fade box animation */
+.fade-box {
+    opacity: 1;
+    transition: opacity 1.2s;
+    background: #fff3cd;
+    padding: 1em;
+    border-radius: 6px;
+    margin: 1em 0;
+    cursor: pointer;
+}
+.fade-box.hide {
+    opacity: 0.2;
+}
+
+/* Slide in animation using keyframes */
+.slide-box {
+    background: #cce5ff;
+    padding: 1em;
+    border-radius: 6px;
+    margin: 1em 0;
+    animation: slideIn 1.2s ease-out;
+}
+@keyframes slideIn {
+    from { transform: translateX(-100vw); }
+    to { transform: translateX(0); }
+}
+
+/* --- Part 2: Color Box --- */
+.color-box {
+    width: 80px; height: 80px;
+    background: #eee;
+    border: 2px solid #ccc;
+    margin: 1em 0;
+    transition: background 0.6s, border-color 0.4s;
+}
+
+/* --- Part 3: JS Animated Box --- */
+.js-anim-box {
+    width: 100px; height: 100px;
+    background: #e1bee7;
+    margin: 1em 0;
+    border-radius: 8px;
+    transition: transform 0.6s, background 0.6s;
+}
+.js-anim-box.animated {
+    animation: bounce 1s;
+    background: #ff9800;
+    transform: scale(1.2) rotate(10deg);
+}
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25) translateY(-20px); }
+    100% { transform: scale(1.2) rotate(10deg); }
+}
+
+/* --- Modal Popup Animation --- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(44,62,80,0.7);
+    justify-content: center;
+    align-items: center;
+    animation: fadeModalIn 0.8s;
+    z-index: 10;
+}
+.modal.show {
+    display: flex;
+    animation: fadeModalIn 0.8s;
+}
+@keyframes fadeModalIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.modal-content {
+    background: #fff;
+    padding: 2em;
+    border-radius: 12px;
+    transform: translateY(-50px);
+    animation: slideModalContent 0.7s;
+}
+@keyframes slideModalContent {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
